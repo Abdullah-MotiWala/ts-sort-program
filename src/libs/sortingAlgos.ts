@@ -1,4 +1,4 @@
-import { SortingOrder } from "../types";
+import { SortingOrder } from "../constants";
 
 abstract class SortingAlgorithm {
   abstract sort(arr: number[], order: SortingOrder): number[];
@@ -43,5 +43,3 @@ export class SelectionSort extends SortingAlgorithm {
     return arr;
   }
 }
-
-

@@ -7,3 +7,4 @@ export enum SortingOrder {
 export interface SortingAlgorithm {
   sort(arr: number[], order: SortingOrder): number[];
 }
+
