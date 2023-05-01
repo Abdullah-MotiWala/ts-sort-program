@@ -13,14 +13,11 @@ export class SortedNumberList {
   constructor(
     numbers: number[],
     sortingAlgorithmStr: string,
-    sortingOrderStr: "ascending" | "descending"
+    sortingOrderStr: SortingOrder
   ) {
     this.numbers = numbers;
     // updating sorting order wrt user's requirment
-    this.sortingOrder =
-      sortingOrderStr.toLowerCase() === "descending"
-        ? SortingOrder.Descending
-        : SortingOrder.Ascending;
+    this.sortingOrder = sortingOrderStr
 
     // selecting sorting algo as per user
     switch (sortingAlgorithmStr) {
