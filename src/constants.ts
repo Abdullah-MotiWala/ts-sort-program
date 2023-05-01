@@ -1,7 +1,7 @@
 //  Sorting
 export enum SortingOrder {
   Ascending = "ascending",
-  Descending = "dscending"
+  Descending = "descending"
 }
 
 export interface SortingAlgorithm {

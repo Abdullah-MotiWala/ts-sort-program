@@ -31,7 +31,3 @@ async function main(): Promise<void> {
 
 // Call the main function
 main();
-
-
-
-
