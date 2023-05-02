@@ -3,15 +3,19 @@ export enum SortingOrder {
   Ascending = "ascending",
   Descending = "descending"
 }
-
+export enum SortingAlgos {
+  QuickSort = "Quick Sort",
+  HeapSort = "Heap Sort",
+  MergeSort = "Merge Sort",
+}
 export interface SortingAlgorithm {
   sort(arr: number[], order: SortingOrder): number[];
 }
-
 export interface UserPrompts {
   inputFile: string;
   outputFile: string;
   order: SortingOrder;
+  algo: SortingAlgos;
   delimiter: string;
 }
 
@@ -29,6 +33,17 @@ export const USER_QUESTIONS = [
   },
   {
     type: 'select',
+    name: 'algo',
+    initial: 0,
+    message: "choose sorting algorithm",
+    choices: [
+      { title: 'Quick', value: SortingAlgos.QuickSort },
+      { title: 'Heap', value: SortingAlgos.HeapSort },
+      { title: 'Merge', value: SortingAlgos.MergeSort },
+    ]
+  },
+  {
+    type: 'select',
     name: 'order',
     initial: 1,
     message: "choose sorting order",
@@ -40,7 +55,7 @@ export const USER_QUESTIONS = [
   {
     type: 'text',
     name: 'delimiter',
-    initial: ", ",
+    initial: ",",
     message: "Enter the delimator of list",
   },
 ]

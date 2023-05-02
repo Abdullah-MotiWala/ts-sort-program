@@ -7,8 +7,8 @@ export class FileHandler {
     private readonly userPrompts: UserPrompts;
     private sortedArray: number[]
 
-    // setting user values which entered in console/prompt 
     constructor(userPrompts: UserPrompts) {
+        // setting user values which entered in console/prompt 
         this.userPrompts = userPrompts
         this.sortedArray = []
     }
@@ -27,7 +27,6 @@ export class FileHandler {
 
             // Split list by comma and convert each element to number
             const listArray = list?.split(this.userPrompts.delimiter).map((item: string) => Number(item));
-
             // Check if the list contains at least two elements
             if (listArray.length <= 1) {
                 console.error("File is unable to sort");
@@ -37,7 +36,7 @@ export class FileHandler {
             // Sort the list
             const sortedResponse = new SortedNumberList(
                 listArray,
-                "bubbleSort",
+                this.userPrompts.algo,
                 this.userPrompts.order
             );
             this.sortedArray = sortedResponse.sort();
